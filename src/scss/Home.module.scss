@@ -1,0 +1,10 @@
+.Home {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	.Wrapper {
+		position: relative;
+		top: 50px;
+	}
+}
