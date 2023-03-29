@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Activity from "./pages/Activity";
-import City from "./pages/City";
+import Activities from "./pages/activites/Activities";
+import Activity from "./pages/activites/Activity";
 import "./index.css";
 
 const router = createBrowserRouter(
@@ -24,12 +24,12 @@ const router = createBrowserRouter(
 				element={<About />}
 			/>
 			<Route
-				path="activity/:id"
-				element={<Activity />}
+				path="activities"
+				element={<Activities />}
 			/>
 			<Route
-				path="city/:id"
-				element={<City />}
+				path="activity/:id"
+				element={<Activity />}
 			/>
 		</Route>,
 	),
