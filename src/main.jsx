@@ -10,11 +10,13 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Activities from "./pages/activites/Activities";
 import Activity from "./pages/activites/Activity";
+import MainLayout from "./layout";
 import "./index.css";
+import City from "./pages/City";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route>
+		<Route element={<MainLayout />}>
 			<Route
 				path="/"
 				element={<Home />}
@@ -30,6 +32,10 @@ const router = createBrowserRouter(
 			<Route
 				path="activity/:id"
 				element={<Activity />}
+			/>
+			<Route
+				path="city/:id"
+				element={<City />}
 			/>
 		</Route>,
 	),

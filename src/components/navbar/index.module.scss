@@ -1,8 +1,11 @@
 .Navbar {
-	position: absolute;
+	position: fixed;
 	top: 0;
+	left: 0;
 	display: flex;
-	gap: 30px;
-	top: 0;
+	justify-content: space-around;
+	align-items: center;
+	height: 50px;
 	width: 100%;
+	background-color: lightgray;
 }

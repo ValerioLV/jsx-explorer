@@ -5,18 +5,17 @@ const Card = ({ data }) => {
 	const navigate = useNavigate();
 
 	const onHandleClick = () => {
-		navigate(`/activity/${data.id}`);
+		navigate(`/activity/${data.name}%27`);
 	};
 	return (
 		<div className={styles.Card}>
+			<h4>{data.name}</h4>
 			<img
 				onClick={onHandleClick}
-				src={data.image}
-				alt={data.title}
+				src="https://picsum.photos/200/300"
+				alt={data.name}
 			/>
-			<h4>{data.title}</h4>
-			<p>Prezzo: {data.price}$</p>
-			<p>Ratings: {data.rating.rate}*</p>
+			<p>Phone: {data.telephone}</p>
 		</div>
 	);
 };

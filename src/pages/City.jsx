@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
+import { city } from "../mock/city";
 import { GET } from "../utils/get";
 
 export default function City() {
-	const [cityInfo, setCity] = useState([]);
-
+	const [cityInfo, setCity] = useState({});
 	useEffect(() => {
-		GET().then(({ city }) => {
-			setCity(() => city);
-		});
+		setCity(city);
 	}, []);
-	console.log(cityInfo);
 
 	return (
 		<div className="cityInfo">
-			<h1>{cityInfo.name}</h1>
+			<h1>{city.city.name}</h1>
 			<img
-				src={cityInfo.cover_image_url}
-				alt={cityInfo.name}
-				width={300}
+				src={city.city.cover_image_url}
+				alt={city.city.name}
+				width={700}
 			/>
-			{/* <p>Si trova in {cityInfo.country.name}</p> */}
+			<p>
+				{city.description} <br />
+				{city.about} <br />
+				{city.meeting_point}
+			</p>
 		</div>
 	);
 }

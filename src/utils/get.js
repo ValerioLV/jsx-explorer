@@ -1,9 +1,9 @@
-const BASE_URL = "https://fakestoreapi.com/products";
+const BASE_URL = "https://failteireland.azure-api.net/opendata-api/v1/";
 
-export const GET = async () => {
-	const res = await fetch(BASE_URL);
+export const GET = async (query) => {
+	const res = await fetch(`${BASE_URL}${query}`);
 	const data = await res.json();
-	console.log(data);
+	console.log(data.results);
 
 	return data;
 };

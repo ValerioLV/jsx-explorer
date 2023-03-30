@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { GET } from "../../utils/get";
 import styles from "./activity.module.scss";
 
 export default function Activity() {
@@ -8,24 +9,25 @@ export default function Activity() {
 	const [item, setItem] = useState({});
 
 	useEffect(() => {
-		fetch(`https://fakestoreapi.com/products/${id || 1}`)
-			.then((res) => res.json())
-			.then((data) => setItem(data));
+		GET(`activities?$filter=name%20eq%20%27${id}`).then((data) =>
+			// setItem(() => data.results[0]),
+			console.log(data),
+		);
 	}, []);
 
 	return (
 		<div className={styles.ItemWrapper}>
-			{item.description ? (
+			aaaaa
+			{item.name ? (
 				<div className={styles.Item}>
-					<img
+					{/* <img
 						src={item.image}
 						alt={item.title}
-					/>
-					<section className={styles.content}>
-						<h3>{item.title}</h3>
-						<p className={styles.desc}>{item.description}</p>
-						<p>Prezzo: {item.price}$</p>
-					</section>
+					/> */}
+					{/* <section className={styles.content}>
+						<h3>{item.name}</h3>
+						<p className={styles.desc}>{item.name}</p>
+					</section> */}
 				</div>
 			) : (
 				<h3>Il Prodotto Non Esiste</h3>

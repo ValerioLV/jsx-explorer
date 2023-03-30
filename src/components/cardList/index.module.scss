@@ -1,5 +1,6 @@
 .CardList {
 	display: flex;
+	justify-content: space-evenly;
 	gap: 10px;
 	flex-wrap: wrap;
 }
