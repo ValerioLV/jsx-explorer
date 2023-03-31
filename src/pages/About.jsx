@@ -1,15 +1,14 @@
+import { useSearchParams } from "react-router-dom";
 import styles from "../scss/About.module.scss";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
 
 const About = () => {
+	const [searchParams] = useSearchParams();
 	return (
 		<div className={styles.About}>
-			<Navbar />
 			<div className={styles.Wrapper}>
 				<h1>About Me</h1>
+				{searchParams.get("desc") && <h3>{searchParams.get("desc")}</h3>}
 			</div>
-			<Footer />
 		</div>
 	);
 };

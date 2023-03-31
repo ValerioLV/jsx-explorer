@@ -1,9 +1,11 @@
+import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { city } from "../mock/city";
-import { GET } from "../utils/get";
 
 export default function City() {
 	const [cityInfo, setCity] = useState({});
+	const [searchParams] = useSearchParams();
+
 	useEffect(() => {
 		setCity(city);
 	}, []);
@@ -21,6 +23,7 @@ export default function City() {
 				{city.about} <br />
 				{city.meeting_point}
 			</p>
+			{searchParams.get("desc") && <h3>{searchParams.get("desc")}</h3>}
 		</div>
 	);
 }
